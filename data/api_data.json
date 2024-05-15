@@ -1,0 +1,33 @@
+{
+    "auth_payload":{
+        "username":"admin",
+        "password":"password123"
+    },
+    "booking_data": {
+        "firstname": "Ravi",
+        "lastname": "Kumar",
+        "totalprice": 400,
+        "depositpaid": true,
+        "bookingdates": {
+            "checkin": "2024-04-29",
+            "checkout": "2024-04-30"
+        },
+        "additionalneeds": "Breakfast"
+    },
+    "updated_booking_data": {
+        "firstname": "Jay",
+        "lastname": "Raj",
+        "totalprice": 130,
+        "depositpaid": true,
+        "bookingdates": {
+            "checkin": "2024-05-01",
+            "checkout": "2024-05-02"
+        },
+        "additionalneeds": "Lunch"
+    },
+    "patch_data": {
+        "firstname" : "James",
+        "lastname" : "Brown"
+    }
+
+}
