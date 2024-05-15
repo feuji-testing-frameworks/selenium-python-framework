@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> 34f1d7ae49ccde9fc640c30b4c1624999ba1ea2f
 import pytest
 from appium.webdriver.appium_service import AppiumService
 from appium.options.common import AppiumOptions
@@ -45,7 +48,10 @@ def create_booking_id(api_data, api_config_from_ini, auth_token):
     assert response.status_code == 200, f"Failed to create booking: {response.text}"
     return str(response.json().get('bookingid', ""))
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 34f1d7ae49ccde9fc640c30b4c1624999ba1ea2f
 """This function provides the data for the mobile automation"""
 def read_mobile_configuration() :
     configuration = configparser.ConfigParser();
@@ -82,7 +88,10 @@ def mobile_data() :
     with open(mobile_data_path , "r") as file :
         data = json.load(file)
     return data;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 34f1d7ae49ccde9fc640c30b4c1624999ba1ea2f
 
 @pytest.fixture(scope="class", autouse=True)
 def browser_setup(request):
