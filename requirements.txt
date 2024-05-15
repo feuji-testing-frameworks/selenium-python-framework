@@ -1,0 +1,7 @@
+import pip
+fo = open("C:\Users\shirisha.mannem\OneDrive - Feuji Software Solutions Pvt Ltd\Documents\Python Projects\selenium-python-framework\selenium-python-framework\requirements.txt", "r")
+inp = fo.read()
+ls =inp.split()     
+
+for i in ls:
+    pip.main(['install',i])
