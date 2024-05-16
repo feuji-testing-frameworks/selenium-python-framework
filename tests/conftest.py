@@ -12,13 +12,11 @@ current_dir = os.path.dirname(os.path.abspath(__file__))
 config_path = os.path.join(current_dir, '..', 'config', 'config.ini')
 api_data_path = os.path.join(current_dir, '..', 'data', 'api_data.json')
 mobile_data_path = os.path.join(current_dir,'..','data','mobile_data.json')
-
+ui_data_path = os.path.join(current_dir,'..','data','ui_data.json')
 
 @pytest.fixture
 def api_data():
-    with open(api_data_path, "r") as file:
-        data = json.load(file)
-    return data
+    return json_data(api_data_path);
 
 @pytest.fixture(scope='function')
 def api_config_from_ini():
@@ -84,7 +82,7 @@ def json_data(filepath) :
 def mobile_data() :
     return json_data(mobile_data_path)
 
-@pytest.fixture(scope="class", autouse=True)
+@pytest.fixture(scope="class")
 def browser_setup(request):
     global driver
     chrome_options = webdriver.ChromeOptions()
@@ -110,6 +108,4 @@ def read_config(ui_path=config_path, section='UI'):
 
 @pytest.fixture
 def ui_data():
-    with open('data/ui_data.json',"r") as file :
-        data = json.load(file)
-    return data
+    return json_data(ui_data_path)
