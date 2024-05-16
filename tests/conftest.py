@@ -75,11 +75,14 @@ def appium_driver_setup(request) :
     appium_server.stop();
 
 """This function will provides the mobile data"""
-@pytest.fixture
-def mobile_data() :
-    with open(mobile_data_path , "r") as file :
+
+def json_data(filepath) :
+    with open(filepath, "r") as file :
         data = json.load(file)
     return data;
+@pytest.fixture
+def mobile_data() :
+    return json_data(mobile_data_path)
 
 @pytest.fixture(scope="class", autouse=True)
 def browser_setup(request):
