@@ -66,6 +66,7 @@ class TestMobileApp :
 
     @pytest.mark.run(order = 5)
     def test_click_navBar_elements(self,appium_driver_setup,mobile_data) :
+        logging.getLogger("root").info("Starting the test_click_navBar_elements")
         driver = appium_driver_setup
         loginPage = LoginPage(driver);
         loginPage.login_function(mobile_data['username'],mobile_data['password']);
