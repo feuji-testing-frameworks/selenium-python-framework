@@ -1,3 +1,4 @@
+import logging
 import pytest
 from appium.webdriver.appium_service import AppiumService
 from appium.options.common import AppiumOptions
@@ -109,3 +110,38 @@ def read_config(ui_path=config_path, section='UI'):
 @pytest.fixture
 def ui_data():
     return json_data(ui_data_path)
+
+@pytest.fixture(scope='function', autouse=True)
+def logger_setup(request):
+    # Configuring root logger
+    logger_name = "root"
+    root_logger = logging.getLogger(logger_name)
+    root_logger.setLevel(logging.DEBUG)
+    formatter = logging.Formatter(fmt='%(asctime)s - %(levelname)s - %(name)s : %(message)s',
+                                  datefmt='%m/%d/%Y %I:%M:%S %p')
+    # Adding console handler for displaying logs in the console
+    ch = logging.StreamHandler()
+    ch.setFormatter(formatter)
+    root_logger.addHandler(ch)
+    # Creating log folder and file
+    log_folder = os.path.abspath(os.path.join(current_dir, '..', 'Log'))  # Assuming 'Log' folder is located one level up
+    try:
+        os.makedirs(log_folder, exist_ok=True)
+        log_file = os.path.join(log_folder, 'test_logs.log')
+        fh = logging.FileHandler(log_file)
+        fh.setFormatter(formatter)
+        root_logger.addHandler(fh)
+        print("Log folder and file created successfully.")
+    except Exception as e:
+        print(f"Error creating log folder or file: {e}")
+    # Adjusting logging levels for specific loggers
+    webdriver_logger = logging.getLogger('selenium.webdriver')  # Adjusting logging level for selenium.webdriver logger
+    webdriver_logger.setLevel(logging.WARNING)
+    urllib3_logger = logging.getLogger('urllib3')  # Adjusting logging level for urllib3 logger
+    urllib3_logger.setLevel(logging.WARNING)
+    yield  # Executing test functions
+    # Cleaning up log handlers to avoid duplicate log entries
+    root_logger.removeHandler(ch)
+    if fh:
+        root_logger.removeHandler(fh)
+        fh.close()

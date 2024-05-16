@@ -3,7 +3,7 @@ import pytest
 import requests
 from tests.conftest import *
 
-@pytest.mark.usefixtures("api_config_from_ini", "auth_token", "api_data")
+@pytest.mark.usefixtures("api_config_from_ini", "auth_token", "api_data", "logger_setup")
 class TestAPI:
    
     def test_get_all_bookings(self, api_config_from_ini, auth_token):
