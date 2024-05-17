@@ -21,7 +21,7 @@ class TestMobileApp :
         loginPage.logout_function();
         logging.getLogger("root").info("Logout Successful")
     
-    """Validate the elements present in the more options or not"""
+    """Login with validate credentials, Validate the elements present in the more options or not"""
     @pytest.mark.run(order = 2)
     def test_more_options_validation(self,appium_driver_setup,mobile_data) :
         logging.getLogger("root").info("Starting the test_more_options_validation")
@@ -40,7 +40,7 @@ class TestMobileApp :
         loginPage.logout_function();
         logging.getLogger("root").info("Logout Successful")
     
-    """Checking the Search Functionality"""
+    """Login with validate credentials, Checking the Search Functionality"""
     @pytest.mark.run(order = 3)
     def test_search_functionality(self,appium_driver_setup,mobile_data) :
         logging.getLogger("root").info("Starting the test_search_functionality")
@@ -54,7 +54,7 @@ class TestMobileApp :
         loginPage.logout_function();
         logging.getLogger("root").info("Logout Successful")
 
-    """Add the own recipe in addRecipe section"""
+    """Login with validate credentials, Add the own recipe in addRecipe section"""
     @pytest.mark.run(order = 4)
     def test_add_recipe_functionality(self,appium_driver_setup,mobile_data) :
         logging.getLogger("root").info("Starting the test_add_recipe_functionality")
@@ -68,7 +68,7 @@ class TestMobileApp :
         loginPage.logout_function();
         logging.getLogger("root").info("Logout Successful")
 
-    """Validate the elements present in the navBar"""
+    """Login with validate credentials, Validate the elements present in the navBar"""
     @pytest.mark.run(order = 5)
     def test_click_navBar_elements(self,appium_driver_setup,mobile_data) :
         logging.getLogger("root").info("Starting the test_click_navBar_elements")
