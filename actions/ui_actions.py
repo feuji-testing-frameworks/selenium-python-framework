@@ -13,7 +13,7 @@ class UI_Actions :
 
     """This function is used for entering the text into the web element"""
     def webElement_input(self,locator,text) :
-        WebDriverWait(self.driver,10).until(EC.visibility_of_element_located(locator)).send_keys(text);
+        WebDriverWait(self.driver,5).until(EC.visibility_of_element_located(locator)).send_keys(text);
 
     """This function is used for entering the text into the web element"""
     def webElement_text(self,locator) :
