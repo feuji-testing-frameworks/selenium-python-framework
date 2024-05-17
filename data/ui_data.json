@@ -1,4 +1,18 @@
 {
-    "email":"demouser@gmail.com",
-    "password":"Demo@User123"
+    "email":"shirishademo@gmail.com",
+    "password":"Demo@User123",
+    "incorrect_password":"demouser123",
+    "name":"demouser1",
+    "country":"india",
+    "city":"hyderabad",
+    "card":"123456567",
+    "month":"may",
+    "year":"2024",
+    "navbar" : [
+        "Home ",
+        "Contact",
+        "About us",
+        "Cart"
+    ]
+
 }
