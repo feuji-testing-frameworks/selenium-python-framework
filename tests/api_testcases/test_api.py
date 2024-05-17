@@ -7,10 +7,12 @@ from tests.conftest import *
 class TestAPI:
    
     def test_get_all_bookings(self, api_config_from_ini, auth_token):
+        logging.info("Starting test_get_all_bookings")
         response = requests.get(api_config_from_ini['api_url']+api_config_from_ini['booking_endpoint'], headers={'Cookie': 'token='+auth_token})
         assert response.status_code == 200
         data = response.json()
         assert any("bookingid" in booking for booking in data), "No bookings found"
+        logging.info("Ended test_get_all_bookings")
 
  
     def test_create_booking(self, api_config_from_ini, auth_token, api_data):
