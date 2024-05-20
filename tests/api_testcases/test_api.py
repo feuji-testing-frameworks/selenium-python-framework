@@ -2,6 +2,7 @@ import logging
 import pytest
 import requests
 from tests.conftest import *
+from utils.retry import get_with_retry,post_with_retry
 
 @pytest.mark.usefixtures("api_config_from_ini", "auth_token", "api_data", "logger_setup")
 class TestAPI:
@@ -59,3 +60,22 @@ class TestAPI:
         assert response.status_code == 201, f"Failed to delete booking. Status code: {response.status_code}"
         logging.info("Booking deleted successfully")
         logging.info("Ending test_delete_booking")
+
+    def test_retry_get_all_bookings(self, api_config_from_ini, auth_token):
+        logging.info("Starting test_retry_get_all_bookings")
+        response = get_with_retry(api_config_from_ini['api_url']+api_config_from_ini['booking_endpoint'], headers={'Cookie': 'token='+auth_token})
+        assert response.status_code == 200
+        data = response.json()
+        assert any("bookingid" in booking for booking in data), "No bookings found"
+        logging.info("Ended test_get_all_bookings")
+
+ 
+    def test_retry_create_booking(self, api_config_from_ini, auth_token, api_data):
+        logging.info("Starting test_retry_create_booking")
+        assert auth_token is not None, "Auth token not found"
+        response = post_with_retry(api_config_from_ini['api_url']+api_config_from_ini['booking_endpoint'], json=api_data.get('booking_data', {} ), headers={'Cookie': 'token='+auth_token})
+        assert response.status_code == 200
+        logging.info("Booking created successfully")
+        data = response.json()
+        assert data.get('bookingid', "") != ""
+        logging.info("Ending test_create_booking")
