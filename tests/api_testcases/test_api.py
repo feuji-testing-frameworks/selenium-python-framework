@@ -4,7 +4,7 @@ import requests
 from tests.conftest import *
 from utils.retry import get_with_retry,post_with_retry
 
-@pytest.mark.usefixtures("api_config_from_ini", "auth_token", "api_data", "logger_setup")
+@pytest.mark.usefixtures("api_config_from_ini", "auth_token", "api_data", "logger_setup","log_on_failure")
 class TestAPI:
    
     def test_get_all_bookings(self, api_config_from_ini, auth_token):

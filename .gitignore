@@ -1,3 +1,4 @@
 ./env
 ./Log
 __pycache__/*.pyc
+./allure_report

@@ -9,6 +9,9 @@ import configparser
 import json
 import requests
 import logging
+import allure
+import shutil
+from allure_commons.types import AttachmentType
 
 current_dir = os.path.dirname(os.path.abspath(__file__))
 config_path = os.path.join(current_dir, '..', 'config', 'config.ini')
@@ -146,3 +149,37 @@ def logger_setup(request):
     if fh:
         root_logger.removeHandler(fh)
         fh.close()
+
+#  Allure Report
+# @pytest.fixture()
+# def log_on_failure(request):
+#     yield
+#     item = request.node
+#     if item.rep_call.failed:
+#         allure.attach(driver.get_screenshot_as_png(),name="failed_test",attachment_type=AttachmentType.PNG)
+@pytest.fixture(autouse= True)
+def log_on_failure(request):
+    yield
+    item = request.node
+    if hasattr(item, "rep_call") and hasattr(item.rep_call, "failed") and item.rep_call.failed:
+        allure.attach(driver.get_screenshot_as_png(), name="failed_test", attachment_type=allure.attachment_type.PNG)
+
+def clean_allure_reports(report_dir):
+    """
+    Clean previous generated Allure reports.
+
+    Args:
+        report_dir (str): Path to the directory containing the Allure reports.
+    """
+    if os.path.exists(report_dir):
+        try:
+            shutil.rmtree(report_dir)
+            print("Previous Allure reports deleted successfully.")
+        except Exception as e:
+            print(f"Error while deleting previous Allure reports: {e}")
+    else:
+        print("No previous Allure reports found.")
+
+# Example usage:
+report_directory = "allure_reports"
+clean_allure_reports(report_directory)
