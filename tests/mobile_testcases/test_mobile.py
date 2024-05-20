@@ -8,6 +8,7 @@ from pages.mobile_pages.moreoptionsvalidation import MoreOptionsValidations
 from pages.mobile_pages.searchpage import SearchPage
 from pages.mobile_pages.clickallheaderelements import ClickAllNavigationButtons
 
+@pytest.mark.usefixtures("log_on_failure")
 class TestMobileApp :
 
     """Login with valid username and password"""

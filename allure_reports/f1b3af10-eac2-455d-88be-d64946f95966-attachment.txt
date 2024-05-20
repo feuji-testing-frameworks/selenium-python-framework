@@ -1,0 +1,2 @@
+05/20/2024 10:53:41 AM - INFO - root : Updating booking with ID: 1076
+05/20/2024 10:53:42 AM - INFO - root : Booking updated successfully

@@ -1,0 +1,3 @@
+05/20/2024 10:53:47 AM - INFO - root : Deleting booking with ID: 1138
+05/20/2024 10:53:48 AM - INFO - root : Booking deleted successfully
+05/20/2024 10:53:48 AM - INFO - root : Ending test_delete_booking

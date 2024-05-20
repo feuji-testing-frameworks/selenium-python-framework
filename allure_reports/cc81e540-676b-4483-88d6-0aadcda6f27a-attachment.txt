@@ -1,0 +1,1 @@
+[32mINFO    [0m root:test_mobile.py:28 Starting the test_more_options_validation

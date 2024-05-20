@@ -1,0 +1,3 @@
+[32mINFO    [0m root:test_api.py:55 Deleting booking with ID: 1138
+[32mINFO    [0m root:test_api.py:58 Booking deleted successfully
+[32mINFO    [0m root:test_api.py:59 Ending test_delete_booking

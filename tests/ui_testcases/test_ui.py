@@ -9,7 +9,7 @@ from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.common.by import By
 import json
 
-@pytest.mark.usefixtures("browser_setup")
+@pytest.mark.usefixtures("browser_setup","log_on_failure")
 class TestUiDemoBlaze:
 
    # @pytest.mark.run()

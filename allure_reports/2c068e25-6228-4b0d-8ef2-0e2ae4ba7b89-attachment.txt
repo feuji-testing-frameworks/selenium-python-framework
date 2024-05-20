@@ -1,0 +1,1 @@
+[32mINFO    [0m root:test_mobile.py:47 Starting the test_search_functionality

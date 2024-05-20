@@ -1,0 +1,1 @@
+[32mINFO    [0m root:test_mobile.py:61 Starting the test_add_recipe_functionality

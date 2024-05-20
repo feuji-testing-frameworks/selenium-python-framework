@@ -1,0 +1,2 @@
+[32mINFO    [0m root:test_api.py:43 Partially updating booking with ID: 1107
+[32mINFO    [0m root:test_api.py:49 Booking partially updated successfully

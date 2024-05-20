@@ -1,0 +1,25 @@
+05/20/2024 10:47:36 AM - INFO - root : Starting test_create_booking
+05/20/2024 10:47:38 AM - INFO - root : Booking created successfully
+05/20/2024 10:47:38 AM - INFO - root : Ending test_create_booking
+05/20/2024 10:47:40 AM - INFO - root : Updating booking with ID: 14718
+05/20/2024 10:47:41 AM - INFO - root : Booking updated successfully
+05/20/2024 10:47:44 AM - INFO - root : Partially updating booking with ID: 14760
+05/20/2024 10:47:45 AM - INFO - root : Booking partially updated successfully
+05/20/2024 10:47:47 AM - INFO - root : Deleting booking with ID: 14787
+05/20/2024 10:47:49 AM - INFO - root : Booking deleted successfully
+05/20/2024 10:47:49 AM - INFO - root : Ending test_delete_booking
+05/20/2024 10:53:37 AM - INFO - root : Starting test_create_booking
+05/20/2024 10:53:38 AM - INFO - root : Booking created successfully
+05/20/2024 10:53:38 AM - INFO - root : Ending test_create_booking
+05/20/2024 10:53:41 AM - INFO - root : Updating booking with ID: 1076
+05/20/2024 10:53:42 AM - INFO - root : Booking updated successfully
+05/20/2024 10:53:44 AM - INFO - root : Partially updating booking with ID: 1107
+05/20/2024 10:53:45 AM - INFO - root : Booking partially updated successfully
+05/20/2024 10:53:47 AM - INFO - root : Deleting booking with ID: 1138
+05/20/2024 10:53:48 AM - INFO - root : Booking deleted successfully
+05/20/2024 10:53:48 AM - INFO - root : Ending test_delete_booking
+05/20/2024 10:54:13 AM - INFO - root : Starting the test_login_functionality
+05/20/2024 10:54:23 AM - INFO - root : Starting the test_more_options_validation
+05/20/2024 10:54:34 AM - INFO - root : Starting the test_search_functionality
+05/20/2024 10:54:44 AM - INFO - root : Starting the test_add_recipe_functionality
+05/20/2024 10:54:54 AM - INFO - root : Starting the test_click_navBar_elements

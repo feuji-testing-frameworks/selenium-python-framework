@@ -1,0 +1,2 @@
+05/20/2024 10:53:44 AM - INFO - root : Partially updating booking with ID: 1107
+05/20/2024 10:53:45 AM - INFO - root : Booking partially updated successfully

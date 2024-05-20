@@ -1,0 +1,2 @@
+[32mINFO    [0m root:test_api.py:30 Updating booking with ID: 1076
+[32mINFO    [0m root:test_api.py:36 Booking updated successfully
