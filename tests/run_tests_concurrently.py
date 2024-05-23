@@ -2,16 +2,16 @@ import subprocess
 import threading
 
 def run_ui_testcases() :
-    subprocess.run(["pytest" , "./tests/ui_testcases/test_ui.py" , "--alluredir=./allure_reports"])
+    subprocess.run(["pytest" , "./tests/ui_testcases/test_ui.py" , "--alluredir=./allure_report"])
 
 def run_api_testcases() :
-    subprocess.run(["pytest" , "./tests/api_testcases/test_api.py" , "--alluredir=./allure_reports"])
+    subprocess.run(["pytest" , "./tests/api_testcases/test_api.py" , "--alluredir=./allure_report"])
 
 def run_api_mock_testcases() : 
-    subprocess.run(["pytest" , "./tests/api_testcases/test_mockapi.py" , "--alluredir=./allure_reports"])
+    subprocess.run(["pytest" , "./tests/api_testcases/test_mockapi.py" , "--alluredir=./allure_report"])
 
 def run_mobile_testcases() :
-    subprocess.run(["pytest" , "./tests/mobile_testcases/test_mobile.py" , "--alluredir=./allure_reports"])
+    subprocess.run(["pytest" , "./tests/mobile_testcases/test_mobile.py" , "--alluredir=./allure_report"])
 
 # Create threads for each category of tests
 ui_thread = threading.Thread(target=run_ui_testcases)
