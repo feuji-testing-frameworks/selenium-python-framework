@@ -18,7 +18,7 @@ Additionally, ensure you have the following setup:
 
 1. **Clone the Project**: Clone the project repository from GitHub using the following command:
 
-   git clone https://github.com/feuji-testing-frameworks/selenium-python-framework.git
+   `git clone https://github.com/feuji-testing-frameworks/selenium-python-framework.git`
 
 2. **Create a Virtual Environment**: Navigate to the project directory and create a virtual environment:
 
