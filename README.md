@@ -15,7 +15,7 @@ Additionally, ensure you have the following setup:
 
 1. Clone the Project:
     Clone the project repository from GitHub using the following command:
-    https://github.com/sharathshari6895/Pytest_E2E
+    https://github.com/feuji-testing-frameworks/selenium-python-framework.git
 2. Create a Virtual Environment:
     Navigate to the project directory and create a virtual environment using the following command:
     python -m venv venv
