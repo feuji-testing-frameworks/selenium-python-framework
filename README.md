@@ -22,30 +22,29 @@ Additionally, ensure you have the following setup:
 
 2. **Create a Virtual Environment**: Navigate to the project directory and create a virtual environment:
 
-    python -m venv venv
+   ` python -m venv venv`
 
 3. **Activate the Virtual Environment**:
 
-   venv\Scripts\activate
+   `venv\Scripts\activate`
 
 4. **Install Dependencies**: Install the required dependencies by running:
 
-   pip install -r requirements.txt
-
+  `pip install -r requirements.txt`
 
 ## Running the Tests
 
 - **Run the Tests**: Execute the tests using:
-pytest -s --alluredir=allure-report
+`pytest -s --alluredir=allure-report`
 
 - **Run the Tests Concurrently**: Execute the tests concurrently using:
-python ./tests/run_tests_concurrently.py
+`python ./tests/run_tests_concurrently.py`
 
 ## Viewing Test Reports
 
 After running the tests, view the test reports using Allure:
 
-allure serve allure-report
+`allure serve allure-report`
 
 This command will serve the reports for easy viewing and analysis.
 
