@@ -1,15 +1,18 @@
 # Core dependencies
-pytest==7.4.3
-requests==2.31.0
-selenium==4.16.0
-pytest-ordering==0.6
+pytest
+requests
+selenium
+webdriver_manager
+pytest-ordering
 
 # Mocking and stubbing
-requests-mock==1.10.0
+requests-mock
 
 # Retry mechanism
-tenacity==8.0.1
+tenacity
 
 # HTML reporting for pytest
-allure-pytest==2.13.2
+allure-pytest
 
+# Appium 
+Appium-Python-Client
