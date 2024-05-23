@@ -21,15 +21,21 @@ Additionally, ensure you have the following setup:
     https://github.com/feuji-testing-frameworks/selenium-python-framework.git
 2. Create a Virtual Environment:
     Navigate to the project directory and create a virtual environment using the following command:
-    python -m venv venv
-3. Activate the Virtual Environment:
-    venv\Scripts\activate
-4. Install Dependencies: Install the required dependencies by running the following command:
-    pip install -r requirements.txt
-5. Run the Tests: Execute the tests using the following command:
-    pytest -s --alluredir=allure-report
-6. Run the tests concurrently: Execute the tests using the following command:
+
+   python -m venv venv
+4. Activate the Virtual Environment:
+
+   venv\Scripts\activate
+6. Install Dependencies: Install the required dependencies by running the following command:
+
+   pip install -r requirements.txt
+8. Run the Tests: Execute the tests using the following command:
+
+   pytest -s --alluredir=allure-report
+10. Run the tests concurrently: Execute the tests using the following command:
+
     python ./tests/run_tests_concurrently.py 
 6. View Test Reports: After running the tests, you can view the test reports using Allure. Run the following command to
 serve the reports:
-    allure serve allure-report
+
+   allure serve allure-report
