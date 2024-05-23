@@ -1,10 +1,13 @@
 Project Name
+
 Selenium-Python-Framework
 
 Description
+
 This project is a combination of UI, API, and mobile automation tests using Python-Selenium in the Pytest framework. It includes tests for various functionalities across different platforms.
 
 Prerequisites
+
 Before running the tests, make sure you have the following installed:
 Python (version 3.12.1)
 Android Studio( 2023.2.1)
