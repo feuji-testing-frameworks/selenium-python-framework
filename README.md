@@ -9,11 +9,17 @@ This project is a combination of UI, API, and mobile automation tests using Pyth
 Prerequisites
 
 Before running the tests, make sure you have the following installed:
+
 Python (version 3.12.1)
+
 Android Studio( 2023.2.1)
+
 Appium(2.5.2)
+
 Appium Inspector(2024.2.2)
+
 IDE (PyCharm, VSCode, etc.)
+
 Additionally, ensure you have the following setup:
 
 1. Clone the Project:
