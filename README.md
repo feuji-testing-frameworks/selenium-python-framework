@@ -1,22 +1,23 @@
-Project Name
+# Project Name
 
-#Selenium-Python-Framework
-
-Description
+## Description
 
 This project is a combination of UI, API, and mobile automation tests using Python-Selenium in the Pytest framework. It includes tests for various functionalities across different platforms.
 
-Prerequisites
+## Prerequisites
 
 Before running the tests, make sure you have the following installed:
 
-Python (version 3.12.1)
+- Python (version 3.12.1)
+- Android Studio( 2023.2.1)
+- Appium(2.5.2)
+- Appium Inspector(2024.2.2)
+- IDE (PyCharm, VSCode, etc.)
 
-Android Studio( 2023.2.1)
+Additionally, ensure you have the following setup:
 
-Appium(2.5.2)
+1. **Clone the Project**: Clone the project repository from GitHub using the following command:
 
-Appium Inspector(2024.2.2)
 
 IDE (PyCharm, VSCode, etc.)
 
