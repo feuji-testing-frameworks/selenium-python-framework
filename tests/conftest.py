@@ -50,7 +50,7 @@ def create_booking_id(api_data, api_config_from_ini, auth_token):
     return str(response.json().get('bookingid', ""))
 """API fixtures are ended"""
 
-"""MObile fixtures are started"""
+"""Mobile fixtures are started"""
 """This function provides the data for the mobile automation"""
 def read_mobile_configuration() :
     configuration = configparser.ConfigParser();
