@@ -19,6 +19,8 @@ api_data_path = os.path.join(current_dir, '..', 'data', 'api_data.json')
 mobile_data_path = os.path.join(current_dir,'..','data','mobile_data.json')
 ui_data_path = os.path.join(current_dir,'..','data','ui_data.json')
 
+#This fixtures are used for api
+"""API fixtures are started"""
 @pytest.fixture
 def api_data():
     return json_data(api_data_path);
@@ -46,7 +48,9 @@ def create_booking_id(api_data, api_config_from_ini, auth_token):
                              json=api_data.get('booking_data',{}), headers={'Cookie': 'token='+auth_token})
     assert response.status_code == 200, f"Failed to create booking: {response.text}"
     return str(response.json().get('bookingid', ""))
+"""API fixtures are ended"""
 
+"""MObile fixtures are started"""
 """This function provides the data for the mobile automation"""
 def read_mobile_configuration() :
     configuration = configparser.ConfigParser();
@@ -77,16 +81,22 @@ def appium_driver_setup(request) :
     driver.quit();
     appium_server.stop();
 
+"""This function will provides the mobile data"""
+@pytest.fixture
+def mobile_data() :
+    return json_data(mobile_data_path)
+"""Mobile fixtures are ended"""
+
+#This function is used to return the data from the json file common for ui,api,mobile
 def json_data(filepath) :
     with open(filepath, "r") as file :
         data = json.load(file)
     return data;
 
-"""This function will provides the mobile data"""
-@pytest.fixture
-def mobile_data() :
-    return json_data(mobile_data_path)
 
+
+
+"""UI fixtures are Started"""
 @pytest.fixture(scope="class")
 def browser_setup(request):
     global driver
@@ -183,3 +193,4 @@ def clean_allure_reports(report_dir):
 # Example usage:
 report_directory = "allure_reports"
 clean_allure_reports(report_directory)
+"""UI fixtures are ended"""
