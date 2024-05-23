@@ -18,31 +18,43 @@ Additionally, ensure you have the following setup:
 
 1. **Clone the Project**: Clone the project repository from GitHub using the following command:
 
+   git clone https://github.com/feuji-testing-frameworks/selenium-python-framework.git
 
-IDE (PyCharm, VSCode, etc.)
+2. **Create a Virtual Environment**: Navigate to the project directory and create a virtual environment:
 
-Additionally, ensure you have the following setup:
+    python -m venv venv
 
-1. Clone the Project:
-    Clone the project repository from GitHub using the following command:
-    https://github.com/feuji-testing-frameworks/selenium-python-framework.git
-2. Create a Virtual Environment:
-    Navigate to the project directory and create a virtual environment using the following command:
-
-   python -m venv venv
-4. Activate the Virtual Environment:
+3. **Activate the Virtual Environment**:
 
    venv\Scripts\activate
-5. Install Dependencies: Install the required dependencies by running the following command:
+
+4. **Install Dependencies**: Install the required dependencies by running:
 
    pip install -r requirements.txt
-6. Run the Tests: Execute the tests using the following command:
 
-   pytest -s --alluredir=allure-report
-7. Run the tests concurrently: Execute the tests using the following command:
 
-    python ./tests/run_tests_concurrently.py 
-8. View Test Reports: After running the tests, you can view the test reports using Allure. Run the following command to
-serve the reports:
+## Running the Tests
 
-   allure serve allure-report
+- **Run the Tests**: Execute the tests using:
+pytest -s --alluredir=allure-report
+
+- **Run the Tests Concurrently**: Execute the tests concurrently using:
+python ./tests/run_tests_concurrently.py
+
+## Viewing Test Reports
+
+After running the tests, view the test reports using Allure:
+
+allure serve allure-report
+
+This command will serve the reports for easy viewing and analysis.
+
+
+
+
+
+
+
+
+
+   
