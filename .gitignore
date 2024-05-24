@@ -1,4 +1,14 @@
-./env
-./Log
-__pycache__/*.pyc
-./allure_report
+# Ignore environment folder and its contents
+env/
+.env
+
+# Ignore log files
+Log/
+*.log
+
+# Ignore Python bytecode
+__pycache__/
+*.pyc
+
+# Ignore allure report
+allure_report/

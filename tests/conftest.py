@@ -16,12 +16,17 @@ from allure_commons.types import AttachmentType
 current_dir = os.path.dirname(os.path.abspath(__file__))
 config_path = os.path.join(current_dir, '..', 'config', 'config.ini')
 api_data_path = os.path.join(current_dir, '..', 'data', 'api_data.json')
+mockapi_data_path = os.path.join(current_dir, '..', 'data', 'mockapi_data.json')
 mobile_data_path = os.path.join(current_dir,'..','data','mobile_data.json')
 ui_data_path = os.path.join(current_dir,'..','data','ui_data.json')
 
 @pytest.fixture
 def api_data():
     return json_data(api_data_path);
+
+@pytest.fixture
+def mockapi_data():
+    return json_data(mockapi_data_path);
 
 @pytest.fixture(scope='function')
 def api_config_from_ini():
@@ -135,7 +140,6 @@ def logger_setup(request):
         fh = logging.FileHandler(log_file)
         fh.setFormatter(formatter)
         root_logger.addHandler(fh)
-        print("Log folder and file created successfully.")
     except Exception as e:
         print(f"Error creating log folder or file: {e}")
     # Adjusting logging levels for specific loggers

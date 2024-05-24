@@ -1,0 +1,20 @@
+{
+    "getbooking_data" : [
+        {"bookingid": 1, "firstname": "John", "lastname": "Doe"},
+        {"bookingid": 2, "firstname": "Jane", "lastname": "Smith"},
+        {"bookingid": 3, "firstname": "John Doe"}
+    ],
+    "booking_data": {
+        "firstname": "Ravi",
+        "lastname": "Kumar",
+        "totalprice": 400,
+        "depositpaid": true,
+        "bookingdates": {
+            "checkin": "2024-04-29",
+            "checkout": "2024-04-30"
+        },
+        "additionalneeds": "Breakfast"
+    },
+    "updated_booking_data" : {"firstname": "Bob", "lastname": "Jones"},
+    "patch_data" : {"lastname": "Johnson"}
+}
