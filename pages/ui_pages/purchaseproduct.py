@@ -10,15 +10,10 @@ class PurchaseProductPage(UI_Actions):
    
     monitors_btn=(By.XPATH,"//a[text()='Monitors']")
     select_apple_monitor=(By.XPATH,"//a[text()='Apple monitor 24']")
-
     add_to_cart_btn=(By.XPATH,"//a[text()='Add to cart']")
-    
-
 
     cart_btn=(By.ID,"cartur")
    
-
-
     place_order_btn=(By.XPATH, "//button[text()='Place Order']")
 
     enter_name=(By.ID,"name")
@@ -58,6 +53,9 @@ class PurchaseProductPage(UI_Actions):
     def place_order_fill_details(self, name,country,city,card, month,year):
         
         self.webElement_input(self.enter_name,name)
+        entered_name = self.driver.find_element(*self.enter_name).get_attribute("value")
+
+        assert entered_name == "demouser1", f"Entered name '{entered_name}' does not match expected name '{name}'"
         self.webElement_input(self.enter_country,country)
         self.webElement_input(self.enter_city,city)
         self.webElement_input(self.enter_card_details,card)

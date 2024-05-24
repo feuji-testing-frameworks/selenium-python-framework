@@ -56,3 +56,160 @@
 05/17/2024 03:44:21 PM - DEBUG - requests_mock.adapter : PUT https://restful-booker.herokuapp.com/booking/1269 200
 05/17/2024 03:44:24 PM - DEBUG - requests_mock.adapter : PATCH https://restful-booker.herokuapp.com/booking/1290 200
 05/17/2024 03:44:26 PM - DEBUG - requests_mock.adapter : DELETE https://restful-booker.herokuapp.com/booking/1313 201
+05/23/2024 06:12:51 PM - INFO - root : Starting test_get_all_bookings
+05/23/2024 06:12:52 PM - INFO - root : Ended test_get_all_bookings
+05/23/2024 06:12:53 PM - INFO - root : Starting test_create_booking
+05/23/2024 06:12:54 PM - INFO - root : Booking created successfully
+05/23/2024 06:12:54 PM - INFO - root : Ending test_create_booking
+05/23/2024 06:12:57 PM - INFO - root : Updating booking with ID: 871
+05/23/2024 06:12:58 PM - INFO - root : Booking updated successfully
+05/23/2024 06:13:00 PM - INFO - root : Partially updating booking with ID: 910
+05/23/2024 06:13:01 PM - INFO - root : Booking partially updated successfully
+05/23/2024 06:13:03 PM - INFO - root : Deleting booking with ID: 944
+05/23/2024 06:13:04 PM - INFO - root : Booking deleted successfully
+05/23/2024 06:13:04 PM - INFO - root : Ending test_delete_booking
+05/23/2024 06:13:06 PM - INFO - root : Starting test_retry_get_all_bookings
+05/23/2024 06:13:07 PM - INFO - root : Ended test_get_all_bookings
+05/23/2024 06:13:08 PM - INFO - root : Starting test_retry_create_booking
+05/23/2024 06:13:09 PM - INFO - root : Booking created successfully
+05/23/2024 06:13:09 PM - INFO - root : Ending test_create_booking
+05/23/2024 06:13:10 PM - INFO - root : Starting test_get_all_bookings
+05/23/2024 06:13:10 PM - INFO - root : Mocking GET request to API
+05/23/2024 06:13:10 PM - DEBUG - requests_mock.adapter : GET https://restful-booker.herokuapp.com/booking 200
+05/23/2024 06:13:10 PM - INFO - root : Received response: [{'bookingid': 1, 'firstname': 'John', 'lastname': 'Doe'}, {'bookingid': 2, 'firstname': 'Jane', 'lastname': 'Smith'}, {'bookingid': 3, 'firstname': 'John Doe'}]
+05/23/2024 06:13:10 PM - INFO - root : Completed test_get_all_bookings
+05/23/2024 06:13:11 PM - INFO - root : Starting test_create_booking
+05/23/2024 06:13:11 PM - INFO - root : Mocking POST request to API
+05/23/2024 06:13:11 PM - DEBUG - requests_mock.adapter : POST https://restful-booker.herokuapp.com/booking 200
+05/23/2024 06:13:11 PM - INFO - root : Received response: {'bookingid': 3, 'firstname': 'Alice', 'lastname': 'Smith'}
+05/23/2024 06:13:11 PM - INFO - root : Completed test_create_booking
+05/23/2024 06:13:13 PM - INFO - root : Starting test_update_booking
+05/23/2024 06:13:13 PM - INFO - root : Mocking PUT request to API
+05/23/2024 06:13:13 PM - DEBUG - requests_mock.adapter : PUT https://restful-booker.herokuapp.com/booking/1059 200
+05/23/2024 06:13:13 PM - INFO - root : Received response: {'firstname': 'Bob', 'lastname': 'Jones'}
+05/23/2024 06:13:13 PM - INFO - root : Completed test_update_booking
+05/23/2024 06:13:15 PM - INFO - root : Starting test_partial_update_booking
+05/23/2024 06:13:15 PM - INFO - root : Mocking PATCH request to API
+05/23/2024 06:13:15 PM - DEBUG - requests_mock.adapter : PATCH https://restful-booker.herokuapp.com/booking/1090 200
+05/23/2024 06:13:15 PM - INFO - root : Received response: {'lastname': 'Johnson'}
+05/23/2024 06:13:15 PM - INFO - root : Completed test_partial_update_booking
+05/23/2024 06:13:18 PM - INFO - root : Starting test_delete_booking
+05/23/2024 06:13:18 PM - INFO - root : Mocking DELETE request to API
+05/23/2024 06:13:18 PM - DEBUG - requests_mock.adapter : DELETE https://restful-booker.herokuapp.com/booking/1112 201
+05/23/2024 06:13:18 PM - INFO - root : Received response: Booking deleted successfully
+05/23/2024 06:13:18 PM - INFO - root : Completed test_delete_booking
+05/24/2024 08:15:04 AM - INFO - root : Starting test_get_all_bookings
+05/24/2024 08:15:05 AM - INFO - root : Ended test_get_all_bookings
+05/24/2024 08:15:06 AM - INFO - root : Starting test_create_booking
+05/24/2024 08:15:07 AM - INFO - root : Booking created successfully
+05/24/2024 08:15:07 AM - INFO - root : Ending test_create_booking
+05/24/2024 08:15:09 AM - INFO - root : Updating booking with ID: 1879
+05/24/2024 08:15:10 AM - INFO - root : Booking updated successfully
+05/24/2024 08:15:12 AM - INFO - root : Partially updating booking with ID: 1899
+05/24/2024 08:15:14 AM - INFO - root : Booking partially updated successfully
+05/24/2024 08:15:16 AM - INFO - root : Deleting booking with ID: 1935
+05/24/2024 08:15:17 AM - INFO - root : Booking deleted successfully
+05/24/2024 08:15:17 AM - INFO - root : Ending test_delete_booking
+05/24/2024 08:15:18 AM - INFO - root : Starting test_retry_get_all_bookings
+05/24/2024 08:15:19 AM - INFO - root : Ended test_get_all_bookings
+05/24/2024 08:15:20 AM - INFO - root : Starting test_retry_create_booking
+05/24/2024 08:15:21 AM - INFO - root : Booking created successfully
+05/24/2024 08:15:21 AM - INFO - root : Ending test_create_booking
+05/24/2024 08:15:22 AM - INFO - root : Starting test_get_all_bookings
+05/24/2024 08:15:22 AM - INFO - root : Mocking GET request to API
+05/24/2024 08:15:22 AM - DEBUG - requests_mock.adapter : GET https://restful-booker.herokuapp.com/booking 200
+05/24/2024 08:15:22 AM - INFO - root : Received response: [{'bookingid': 1, 'firstname': 'John', 'lastname': 'Doe'}, {'bookingid': 2, 'firstname': 'Jane', 'lastname': 'Smith'}, {'bookingid': 3, 'firstname': 'John Doe'}]
+05/24/2024 08:15:22 AM - INFO - root : Completed test_get_all_bookings
+05/24/2024 08:15:23 AM - INFO - root : Starting test_create_booking
+05/24/2024 08:15:23 AM - INFO - root : Mocking POST request to API
+05/24/2024 08:15:23 AM - DEBUG - requests_mock.adapter : POST https://restful-booker.herokuapp.com/booking 200
+05/24/2024 08:15:23 AM - INFO - root : Received response: {'bookingid': 3, 'firstname': 'Alice', 'lastname': 'Smith'}
+05/24/2024 08:15:23 AM - INFO - root : Completed test_create_booking
+05/24/2024 08:15:25 AM - INFO - root : Starting test_update_booking
+05/24/2024 08:15:25 AM - INFO - root : Mocking PUT request to API
+05/24/2024 08:15:25 AM - DEBUG - requests_mock.adapter : PUT https://restful-booker.herokuapp.com/booking/2029 200
+05/24/2024 08:15:25 AM - INFO - root : Received response: {'firstname': 'Bob', 'lastname': 'Jones'}
+05/24/2024 08:15:25 AM - INFO - root : Completed test_update_booking
+05/24/2024 08:15:27 AM - INFO - root : Starting test_partial_update_booking
+05/24/2024 08:15:27 AM - INFO - root : Mocking PATCH request to API
+05/24/2024 08:15:27 AM - DEBUG - requests_mock.adapter : PATCH https://restful-booker.herokuapp.com/booking/2049 200
+05/24/2024 08:15:27 AM - INFO - root : Received response: {'lastname': 'Johnson'}
+05/24/2024 08:15:27 AM - INFO - root : Completed test_partial_update_booking
+05/24/2024 08:15:30 AM - INFO - root : Starting test_delete_booking
+05/24/2024 08:15:30 AM - INFO - root : Mocking DELETE request to API
+05/24/2024 08:15:30 AM - DEBUG - requests_mock.adapter : DELETE https://restful-booker.herokuapp.com/booking/2066 201
+05/24/2024 08:15:30 AM - INFO - root : Received response: Booking deleted successfully
+05/24/2024 08:15:30 AM - INFO - root : Completed test_delete_booking
+05/24/2024 08:26:21 AM - INFO - root : Starting the test_login_functionality
+05/24/2024 08:26:29 AM - INFO - root : Login Successful
+05/24/2024 08:26:41 AM - INFO - root : Logout Successful
+05/24/2024 08:26:41 AM - INFO - root : Starting the test_more_options_validation
+05/24/2024 08:26:50 AM - INFO - root : Login Successful
+05/24/2024 08:27:09 AM - INFO - root : Verifying the elements present in the moreOptions
+05/24/2024 08:27:10 AM - INFO - root : Click on App Update
+05/24/2024 08:27:15 AM - INFO - root : Logout Successful
+05/24/2024 08:27:15 AM - INFO - root : Starting the test_search_functionality
+05/24/2024 08:27:21 AM - INFO - root : Login Successful
+05/24/2024 08:27:39 AM - INFO - root : Searching Functionality
+05/24/2024 08:27:44 AM - INFO - root : Logout Successful
+05/24/2024 08:27:44 AM - INFO - root : Starting the test_add_recipe_functionality
+05/24/2024 08:27:49 AM - INFO - root : Login Successful
+05/24/2024 08:28:18 AM - INFO - root : Add the recipe
+05/24/2024 08:28:25 AM - INFO - root : Logout Successful
+05/24/2024 08:28:25 AM - INFO - root : Starting the test_click_navBar_elements
+05/24/2024 08:28:30 AM - INFO - root : Login Successful
+05/24/2024 08:28:50 AM - INFO - root : Checking the Navigation bar elements
+05/24/2024 08:28:56 AM - INFO - root : Logout Successful
+05/24/2024 08:28:57 AM - INFO - root : Starting test_get_all_bookings
+05/24/2024 08:28:58 AM - INFO - root : Ended test_get_all_bookings
+05/24/2024 08:29:00 AM - INFO - root : Starting test_create_booking
+05/24/2024 08:29:01 AM - INFO - root : Booking created successfully
+05/24/2024 08:29:01 AM - INFO - root : Ending test_create_booking
+05/24/2024 08:29:03 AM - INFO - root : Updating booking with ID: 3931
+05/24/2024 08:29:04 AM - INFO - root : Booking updated successfully
+05/24/2024 08:29:06 AM - INFO - root : Partially updating booking with ID: 3963
+05/24/2024 08:29:07 AM - INFO - root : Booking partially updated successfully
+05/24/2024 08:29:09 AM - INFO - root : Deleting booking with ID: 3992
+05/24/2024 08:29:10 AM - INFO - root : Booking deleted successfully
+05/24/2024 08:29:10 AM - INFO - root : Ending test_delete_booking
+05/24/2024 08:29:11 AM - INFO - root : Starting test_retry_get_all_bookings
+05/24/2024 08:29:12 AM - INFO - root : Ended test_get_all_bookings
+05/24/2024 08:29:13 AM - INFO - root : Starting test_retry_create_booking
+05/24/2024 08:29:14 AM - INFO - root : Booking created successfully
+05/24/2024 08:29:14 AM - INFO - root : Ending test_create_booking
+05/24/2024 08:29:16 AM - INFO - root : Starting test_get_all_bookings
+05/24/2024 08:29:16 AM - INFO - root : Mocking GET request to API
+05/24/2024 08:29:16 AM - DEBUG - requests_mock.adapter : GET https://restful-booker.herokuapp.com/booking 200
+05/24/2024 08:29:16 AM - INFO - root : Received response: [{'bookingid': 1, 'firstname': 'John', 'lastname': 'Doe'}, {'bookingid': 2, 'firstname': 'Jane', 'lastname': 'Smith'}, {'bookingid': 3, 'firstname': 'John Doe'}]
+05/24/2024 08:29:16 AM - INFO - root : Completed test_get_all_bookings
+05/24/2024 08:29:17 AM - INFO - root : Starting test_create_booking
+05/24/2024 08:29:17 AM - INFO - root : Mocking POST request to API
+05/24/2024 08:29:17 AM - DEBUG - requests_mock.adapter : POST https://restful-booker.herokuapp.com/booking 200
+05/24/2024 08:29:17 AM - INFO - root : Received response: {'bookingid': 3, 'firstname': 'Alice', 'lastname': 'Smith'}
+05/24/2024 08:29:17 AM - INFO - root : Completed test_create_booking
+05/24/2024 08:29:19 AM - INFO - root : Starting test_update_booking
+05/24/2024 08:29:19 AM - INFO - root : Mocking PUT request to API
+05/24/2024 08:29:19 AM - DEBUG - requests_mock.adapter : PUT https://restful-booker.herokuapp.com/booking/4076 200
+05/24/2024 08:29:19 AM - INFO - root : Received response: {'firstname': 'Bob', 'lastname': 'Jones'}
+05/24/2024 08:29:19 AM - INFO - root : Completed test_update_booking
+05/24/2024 08:29:21 AM - INFO - root : Starting test_partial_update_booking
+05/24/2024 08:29:21 AM - INFO - root : Mocking PATCH request to API
+05/24/2024 08:29:21 AM - DEBUG - requests_mock.adapter : PATCH https://restful-booker.herokuapp.com/booking/4094 200
+05/24/2024 08:29:21 AM - INFO - root : Received response: {'lastname': 'Johnson'}
+05/24/2024 08:29:21 AM - INFO - root : Completed test_partial_update_booking
+05/24/2024 08:29:23 AM - INFO - root : Starting test_delete_booking
+05/24/2024 08:29:23 AM - INFO - root : Mocking DELETE request to API
+05/24/2024 08:29:23 AM - DEBUG - requests_mock.adapter : DELETE https://restful-booker.herokuapp.com/booking/4103 201
+05/24/2024 08:29:23 AM - INFO - root : Received response: Booking deleted successfully
+05/24/2024 08:29:23 AM - INFO - root : Completed test_delete_booking
+05/24/2024 09:06:09 AM - INFO - root : demoblaze login successful
+05/24/2024 10:11:57 AM - INFO - root : demoblaze login successful
+05/24/2024 10:14:05 AM - INFO - root : demoblaze login successful
+05/24/2024 10:26:44 AM - INFO - root : demoblaze login successful
+05/24/2024 10:26:45 AM - INFO - root : demoblaze logout successful
+05/24/2024 10:26:59 AM - INFO - root : mobile added to cart
+05/24/2024 10:27:02 AM - INFO - root : laptop added to cart
+05/24/2024 10:27:33 AM - INFO - root : monitor is added to cart
+05/24/2024 10:27:36 AM - INFO - root : monitor purchased successfully
+05/24/2024 10:27:57 AM - INFO - root : Validating menu items
+05/24/2024 10:28:04 AM - INFO - root : Login with invalid credentials
