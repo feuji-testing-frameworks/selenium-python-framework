@@ -65,11 +65,11 @@ class TestMobileApp :
         driver = appium_driver_setup
         loginPage = LoginPage(driver);
         loginPage.login_function(mobile_data['username'], mobile_data['password']);
-        assert driver.find_element(* loginPage.getIdeasElement).text == mobile_data['getIdea']
         logging.getLogger("root").info("Login Successful")
         addRecipePage = Add_Recipe_Page(driver);
         addRecipePage.add_recipe_function(mobile_data['title'],mobile_data['ingredients'],mobile_data['instructions']);
         logging.getLogger("root").info("Add the recipe")
+        assert driver.find_element(* loginPage.getIdeasElement).text == mobile_data['getIdea']
         loginPage.logout_function();
         logging.getLogger("root").info("Logout Successful")
 
