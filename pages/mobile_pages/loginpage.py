@@ -6,6 +6,7 @@ class LoginPage(Appium_Actions) :
     signin_button = (AppiumBy.XPATH , "//android.widget.TextView[@text='Sign in']");
     email_input = (AppiumBy.XPATH , "//android.widget.EditText[@resource-id='com.bigoven.android:id/email']");
     password_input = (AppiumBy.XPATH , "//android.widget.EditText[@resource-id='com.bigoven.android:id/password']");
+    getIdeasElement = (AppiumBy.XPATH , "//android.widget.LinearLayout[@content-desc='Get Ideas']/android.widget.TextView")
     more_options_button = (AppiumBy.XPATH , "//android.widget.ImageView[@content-desc='More options']");
     settings_button = (AppiumBy.XPATH , "//android.widget.TextView[@text = 'Settings']");
     signout_button = (AppiumBy.XPATH , "//android.widget.TextView[@text='Sign Out']");

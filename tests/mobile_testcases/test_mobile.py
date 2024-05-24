@@ -17,6 +17,7 @@ class TestMobileApp :
         driver = appium_driver_setup
         loginPage = LoginPage(driver);
         loginPage.login_function( mobile_data['username'], mobile_data['password']);
+        assert driver.find_element(* loginPage.getIdeasElement).text == mobile_data['getIdea']
         logging.getLogger("root").info("Login Successful")
         loginPage.logout_function();
         logging.getLogger("root").info("Logout Successful")
@@ -28,6 +29,7 @@ class TestMobileApp :
         driver = appium_driver_setup
         loginPage = LoginPage(driver);
         loginPage.login_function( mobile_data['username'], mobile_data['password']);
+        assert driver.find_element(* loginPage.getIdeasElement).text == mobile_data['getIdea']
         logging.getLogger("root").info("Login Successful")
         moreOptions = MoreOptionsValidations(driver);
         moreOptions.clickOnMoreOptions();
@@ -47,6 +49,7 @@ class TestMobileApp :
         driver = appium_driver_setup
         loginPage = LoginPage(driver);
         loginPage.login_function(mobile_data['username'], mobile_data['password']);
+        assert driver.find_element(* loginPage.getIdeasElement).text == mobile_data['getIdea']
         logging.getLogger("root").info("Login Successful")
         searchPage = SearchPage(driver);
         searchPage.search_function(mobile_data['searchdata']);
@@ -61,6 +64,7 @@ class TestMobileApp :
         driver = appium_driver_setup
         loginPage = LoginPage(driver);
         loginPage.login_function(mobile_data['username'], mobile_data['password']);
+        assert driver.find_element(* loginPage.getIdeasElement).text == mobile_data['getIdea']
         logging.getLogger("root").info("Login Successful")
         addRecipePage = Add_Recipe_Page(driver);
         addRecipePage.add_recipe_function(mobile_data['title'],mobile_data['ingredients'],mobile_data['instructions']);
@@ -75,6 +79,7 @@ class TestMobileApp :
         driver = appium_driver_setup
         loginPage = LoginPage(driver);
         loginPage.login_function(mobile_data['username'],mobile_data['password']);
+        assert driver.find_element(* loginPage.getIdeasElement).text == mobile_data['getIdea']
         logging.getLogger("root").info("Login Successful")
         navBarElement = ClickAllNavigationButtons(driver);
         for element in mobile_data['navigationbar'] :
