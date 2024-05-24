@@ -1,6 +1,7 @@
 {
     "username" : "demouser1@gmail.com" ,
     "password" : "DemoUser@56" ,
+    "getIdea" : "GET IDEAS",
     "moreoptions": [
         "Upgrade to Pro",
         "Settings",
