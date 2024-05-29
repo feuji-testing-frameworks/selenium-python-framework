@@ -40,6 +40,9 @@ Additionally, ensure you have the following setup:
 - **Run the Tests Concurrently**: Execute the tests concurrently using:
 `python ./tests/run_tests_concurrently.py`
 
+- **Run the Mobile Testcases Concurrently**: Execute the mobile testcases concurrently using :
+`pytest -v -n 2   ./tests/mobile_testcases/test_mobile.py --alluredir="./allure_report"`
+
 ## Viewing Test Reports
 
 After running the tests, view the test reports using Allure:
