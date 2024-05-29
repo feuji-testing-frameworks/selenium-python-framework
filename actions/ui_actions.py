@@ -1,5 +1,6 @@
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.common.exceptions import TimeoutException, NoSuchElementException, ElementNotVisibleException, ElementNotInteractableException
 
 class UI_Actions :
 
@@ -31,3 +32,48 @@ class UI_Actions :
     """This function is used for clearing the input fields"""
     def webElement_input_clear(self,locator) :
         WebDriverWait(self.driver,10).until(EC.visibility_of_element_located(locator)).clear();
+
+    def is_visible(self, locator, timeout=2):
+        try:
+            WebDriverWait(self.driver, timeout).until(
+                EC.visibility_of_element_located(locator))
+            return True
+        except (TimeoutException, NoSuchElementException):
+            return False
+
+    def is_editable(self, locator, timeout=2):
+        try:
+            element = WebDriverWait(self.driver, timeout).until(
+                EC.visibility_of_element_located(locator))
+            return element.is_enabled()
+        except (TimeoutException, NoSuchElementException):
+            return False
+
+    def is_clickable(self, locator, timeout=2):
+        try:
+            WebDriverWait(self.driver, timeout).until(
+                EC.element_to_be_clickable(locator))
+            return True
+        except (TimeoutException, NoSuchElementException, ElementNotInteractableException):
+            return False
+
+    def is_present(self, locator, timeout=2):
+        try:
+            WebDriverWait(self.driver, timeout).until(
+                EC.presence_of_element_located(locator))
+            return True
+        except (TimeoutException, NoSuchElementException):
+            return False
+        
+    def is_alert_present(self):
+        try:
+            WebDriverWait(self.driver, 2).until(EC.alert_is_present())
+            return True
+        except TimeoutException:
+            return False
+
+    def get_alert_text(self):
+        alert = self.driver.switch_to.alert
+        alert_text = alert.text
+        alert.accept()  # Dismiss the alert after retrieving the text
+        return alert_text
