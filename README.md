@@ -35,7 +35,7 @@ Additionally, ensure you have the following setup:
 ## Running the Tests
 
 - **Run the Tests**: Execute the tests using:
-`pytest -s --alluredir=allure-report`
+`pytest -s --alluredir=allure_report`
 
 - **Run the Tests Concurrently**: Execute the tests concurrently using:
 `python ./tests/run_tests_concurrently.py`
