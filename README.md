@@ -44,7 +44,7 @@ Additionally, ensure you have the following setup:
 
 After running the tests, view the test reports using Allure:
 
-`allure serve allure-report`
+`allure serve allure_report`
 
 This command will serve the reports for easy viewing and analysis.
 

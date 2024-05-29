@@ -18,7 +18,7 @@ class Add_Recipe_Page(Appium_Actions) :
         super().__init__(driver);
 
     def add_recipe_function(self,title,ingredients,instructions) :
-        self.click_webelement(self.remind_me_later_button);
+        # self.click_webelement(self.remind_me_later_button);
         self.click_webelement(self.my_recipe_button);
         self.click_webelement(self.add_recipe_button);
         self.click_webelement(self.type_in_recipie_button);

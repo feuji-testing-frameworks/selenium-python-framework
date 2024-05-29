@@ -11,7 +11,9 @@ import requests
 import logging
 import allure
 import shutil
+import time
 from allure_commons.types import AttachmentType
+from selenium.common.exceptions import WebDriverException
 
 current_dir = os.path.dirname(os.path.abspath(__file__))
 config_path = os.path.join(current_dir, '..', 'config', 'config.ini')
@@ -66,25 +68,107 @@ def read_mobile_configuration() :
     else :
         raise Exception("Mobile section is not found in config.ini")
     
+# List of available devices
+DEVICES = ["emulator-5554", "emulator-5556"]
+
+@pytest.fixture(scope="session", autouse=True)
+def start_emulators():
+    for device in DEVICES:
+        os.system(f"emulator -avd {device} -no-snapshot-load -no-snapshot-save &")
+    # Wait for emulators to start
+    time.sleep(30)
+
+@pytest.fixture(scope="session")
+def device_name(worker_id):
+    if worker_id == 'master':
+        index = 0  # Assign master to the first device or handle differently
+    else:
+        index = int(worker_id.replace("gw", "")) % len(DEVICES)
+    return DEVICES[index]
+
 """This function provides the driver for the mobile automation"""
 @pytest.fixture(scope='session')
-def appium_driver_setup(request) :
-    mobile_configuration = read_mobile_configuration();
-    appium_server = AppiumService();
-    appium_server.start();
-    capabilities : Dict[str , Any ] = {
-        "platformName" : mobile_configuration["platformName"],
-        "appium:deviceName" : mobile_configuration["deviceName"],
-        "appium:automationName" : mobile_configuration["automationName"],
-        "appium:appPackage" : mobile_configuration["appPackage"],
-        "appium:appActivity" : mobile_configuration["appActivity"],
-        "appium:platformVersion" : mobile_configuration["platformVersion"],
-        "appium:appPath" : mobile_configuration["appPath"]
+def appium_driver_setup(request, device_name):
+    mobile_configuration = read_mobile_configuration()
+
+    appium_server = AppiumService()
+    if device_name == 'emulator-5554':
+        appium_server.start(args=["-p", "4726"])
+        appium_server_url = mobile_configuration["appium_server_url1"]
+    elif device_name == 'emulator-5556':
+        appium_server.start(args=["-p", "4728"])
+        appium_server_url = mobile_configuration["appium_server_url2"]
+
+    capabilities: Dict[str, Any] = {
+        "platformName": mobile_configuration["platformName"],
+        "appium:udid": device_name,
+        "appium:automationName": mobile_configuration["automationName"],
+        "appium:appPackage": mobile_configuration["appPackage"],
+        "appium:appActivity": mobile_configuration["appActivity"],
+        "appium:platformVersion": mobile_configuration["platformVersion"],
+        "appium:appPath": mobile_configuration["appPath"]
     }
-    driver = webdriver.Remote(mobile_configuration["appium_server_url"], options= AppiumOptions().load_capabilities(capabilities));
+
+    driver = webdriver.Remote(appium_server_url, options=AppiumOptions().load_capabilities(capabilities))
+    
     yield driver
-    driver.quit();
-    appium_server.stop();
+    
+    driver.quit()
+    appium_server.stop()
+
+# """This function provides the driver for the mobile automation"""
+# @pytest.fixture(scope='session')
+# def appium_driver_setup(request) :
+#     mobile_configuration = read_mobile_configuration();
+#     appium_server = AppiumService();
+#     appium_server.start();
+#     capabilities : Dict[str , Any ] = {
+#         "platformName" : mobile_configuration["platformName"],
+#         "appium:udid" :mobile_configuration["deviceName1"] ,
+#         "appium:automationName" : mobile_configuration["automationName"],
+#         "appium:appPackage" : mobile_configuration["appPackage"],
+#         "appium:appActivity" : mobile_configuration["appActivity"],
+#         "appium:platformVersion" : mobile_configuration["platformVersion"],
+#         "appium:appPath" : mobile_configuration["appPath"]
+#     }
+#     driver = webdriver.Remote(mobile_configuration["appium_server_url"], options= AppiumOptions().load_capabilities(capabilities));
+#     yield driver
+#     driver.quit();
+#     appium_server.stop();
+
+# """This function provides the driver for the mobile automation"""
+# @pytest.fixture(params=["device1", "device2"], scope='function')
+# def appium_driver_setup(request):
+#     mobile_configuration = read_mobile_configuration()
+
+#     if request.param == 'device1':
+#         capabilities: Dict[str, Any] = {
+#             "platformName": mobile_configuration["platformName"],
+#             # "appium:deviceName": mobile_configuration["deviceName1"],
+#             "appium:udid": mobile_configuration["deviceName1"],
+#             "appium:automationName": mobile_configuration["automationName"],
+#             "appium:appPackage": mobile_configuration["appPackage"],
+#             "appium:appActivity": mobile_configuration["appActivity"],
+#             "appium:platformVersion": mobile_configuration["platformVersion"],
+#             "appium:appPath": mobile_configuration["appPath"]
+#         }
+#         driver = webdriver.Remote(mobile_configuration["appium_server_url1"], options=AppiumOptions().load_capabilities(capabilities))
+#     elif request.param == 'device2':
+#         capabilities: Dict[str, Any] = {
+#             "platformName": mobile_configuration["platformName"],
+#             "appium:udid": mobile_configuration["deviceName2"],
+#             "appium:automationName": mobile_configuration["automationName"],
+#             "appium:appPackage": mobile_configuration["appPackage"],
+#             "appium:appActivity": mobile_configuration["appActivity"],
+#             "appium:platformVersion": mobile_configuration["platformVersion"],
+#             "appium:appPath": mobile_configuration["appPath"]
+#         }
+#         driver = webdriver.Remote(mobile_configuration["appium_server_url2"], options=AppiumOptions().load_capabilities(capabilities))
+#     else:
+#         raise ValueError(f"Unknown device: {request.param}")
+
+#     yield driver
+#     driver.quit()
 
 """This function will provides the mobile data"""
 @pytest.fixture
