@@ -7,6 +7,9 @@ class ClickAllNavigationButtons(Appium_Actions) :
 
     def __init__(self, driver):
         super().__init__(driver);
+    
+    def click_on_remindmelater_button(self) :
+        self.click_webelement(self.remind_me_later_button);
 
     def click_on_navigation_elements(self,element) :
         # self.click_webelement(self.remind_me_later_button);
