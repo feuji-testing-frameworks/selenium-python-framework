@@ -18,6 +18,7 @@ class TestMobileApp :
         driver = appium_driver_setup
         loginPage = LoginPage(driver);
         loginPage.login_function( mobile_data['username'], mobile_data['password']);
+        time.sleep(5)
         assert driver.find_element(* loginPage.getIdeasElement).text == mobile_data['getIdea']
         logging.getLogger("root").info("Login Successful")
         loginPage.logout_function();
