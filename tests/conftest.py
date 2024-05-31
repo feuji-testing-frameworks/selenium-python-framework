@@ -116,60 +116,6 @@ def appium_driver_setup(request, device_name):
     driver.quit()
     appium_server.stop()
 
-# """This function provides the driver for the mobile automation"""
-# @pytest.fixture(scope='session')
-# def appium_driver_setup(request) :
-#     mobile_configuration = read_mobile_configuration();
-#     appium_server = AppiumService();
-#     appium_server.start();
-#     capabilities : Dict[str , Any ] = {
-#         "platformName" : mobile_configuration["platformName"],
-#         "appium:udid" :mobile_configuration["deviceName1"] ,
-#         "appium:automationName" : mobile_configuration["automationName"],
-#         "appium:appPackage" : mobile_configuration["appPackage"],
-#         "appium:appActivity" : mobile_configuration["appActivity"],
-#         "appium:platformVersion" : mobile_configuration["platformVersion"],
-#         "appium:appPath" : mobile_configuration["appPath"]
-#     }
-#     driver = webdriver.Remote(mobile_configuration["appium_server_url"], options= AppiumOptions().load_capabilities(capabilities));
-#     yield driver
-#     driver.quit();
-#     appium_server.stop();
-
-# """This function provides the driver for the mobile automation"""
-# @pytest.fixture(params=["device1", "device2"], scope='function')
-# def appium_driver_setup(request):
-#     mobile_configuration = read_mobile_configuration()
-
-#     if request.param == 'device1':
-#         capabilities: Dict[str, Any] = {
-#             "platformName": mobile_configuration["platformName"],
-#             # "appium:deviceName": mobile_configuration["deviceName1"],
-#             "appium:udid": mobile_configuration["deviceName1"],
-#             "appium:automationName": mobile_configuration["automationName"],
-#             "appium:appPackage": mobile_configuration["appPackage"],
-#             "appium:appActivity": mobile_configuration["appActivity"],
-#             "appium:platformVersion": mobile_configuration["platformVersion"],
-#             "appium:appPath": mobile_configuration["appPath"]
-#         }
-#         driver = webdriver.Remote(mobile_configuration["appium_server_url1"], options=AppiumOptions().load_capabilities(capabilities))
-#     elif request.param == 'device2':
-#         capabilities: Dict[str, Any] = {
-#             "platformName": mobile_configuration["platformName"],
-#             "appium:udid": mobile_configuration["deviceName2"],
-#             "appium:automationName": mobile_configuration["automationName"],
-#             "appium:appPackage": mobile_configuration["appPackage"],
-#             "appium:appActivity": mobile_configuration["appActivity"],
-#             "appium:platformVersion": mobile_configuration["platformVersion"],
-#             "appium:appPath": mobile_configuration["appPath"]
-#         }
-#         driver = webdriver.Remote(mobile_configuration["appium_server_url2"], options=AppiumOptions().load_capabilities(capabilities))
-#     else:
-#         raise ValueError(f"Unknown device: {request.param}")
-
-#     yield driver
-#     driver.quit()
-
 """This function will provides the mobile data"""
 @pytest.fixture
 def mobile_data() :
